@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>基础饼图</title>
+    <title>包含图例的饼图</title>
 
     <script src="./js/highcharts.js"></script>
     <script src="./js/exporting.js"></script>
@@ -31,7 +31,7 @@
             type: 'pie'
         },
         title: {
-            text: '2018年1月浏览器市场份额'
+            text: '2018 年浏览器市场份额'
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -41,12 +41,9 @@
                 allowPointSelect: true,
                 cursor: 'pointer',
                 dataLabels: {
-                    enabled: true,
-                    format: '<b>{point.name}</b>: {point.percentage:.1f} %',
-                    style: {
-                        color: (Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black'
-                    }
-                }
+                    enabled: true
+                },
+                showInLegend: true
             }
         },
         series: [{
@@ -70,57 +67,11 @@
                 name: 'Safari',
                 y: 4.18
             }, {
-                name: 'Sogou Explorer',
-                y: 1.64
-            }, {
-                name: 'Opera',
-                y: 1.6
-            }, {
-                name: 'QQ',
-                y: 1.2
-            }, {
                 name: 'Other',
-                y: 2.61
+                y: 7.05
             }]
         }]
     })
-
-    var a = 10;
-    window.setInterval(() =>
-    {
-        chart.series[0].updateData([{
-            name: 'Chrome',
-            y: 61.41,
-            sliced: true,
-            selected: true
-        }, {
-            name: 'Internet Explorer',
-            y: 11.84
-        }, {
-            name: 'Firefox',
-            y: 10.85
-        }, {
-            name: 'Edge',
-            y: 4.67
-        }, {
-            name: 'Safari',
-            y: 4.18
-        }, {
-            name: 'Sogou Explorer',
-            y: 1.64
-        }, {
-            name: 'Opera',
-            y: 1.6
-        }, {
-            name: 'QQ',
-            y: a += 3
-        }, {
-            name: 'Other',
-            y: 2.61
-        }])
-
-        chart.redraw()
-    }, 3000)
 
 </script>
 
