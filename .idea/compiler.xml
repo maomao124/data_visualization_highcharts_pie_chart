@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="data_visualization_highcharts_pie_chart" target="17" />
+      <module name="data_visualization_highcharts_pie_chart" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
